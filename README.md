@@ -2,8 +2,10 @@
 --------------------------------------------------------------
 
 REQUIREMENTS
+----
 
 GENERAL
+---
 
 Allowed editors: vi, vim, emacs
 
@@ -31,36 +33,39 @@ Allowed editors: vi, vim, emacs
 
 
 MORE INFO
+----
 
 Authorized functions and macros
 
-•write (man 2 write)
+ •write (man 2 write)
 
-•malloc (man 3 malloc)
+ •malloc (man 3 malloc)
 
-•free (man 3 free)
+ •free (man 3 free)
 
-•va_start (man 3 va_start)
+ •va_start (man 3 va_start)
 
-•va_end (man 3 va_end)
+ •va_end (man 3 va_end)
 
-•va_copy (man 3 va_copy)
+ •va_copy (man 3 va_copy)
 
-•va_arg (man 3 va_arg)
+ •va_arg (man 3 va_arg)
 
 
 COMPILATION
+-------------------------------------------------------------
 
 •Your code will be compiled this way:
 
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 CREDITS
+----
 
-• Kagiso Makgaba
+ • Kagiso Makgaba
 
-º https://github.com/KagisoMakgaba1
+   º https://github.com/KagisoMakgaba1
 
-• Tiisang Lesaoana
+ • Tiisang Lesaoana
 
-º https://github.com/KamanoL
+   º https://github.com/KamanoL
