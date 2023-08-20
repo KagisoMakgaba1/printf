@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			buff = print_buff(buff, &buff_index);
+			print_buff(buff, &buff_index);
 			flags = get_flags(format, &i);
 			width = get_width(format, &i, li);
 			precision = get_precision(format, &i, li);
@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 	}
 
 	print_buff(buff, &buff_index);
-	va_list(li);
+	va_end (li);
+
 	return (printed_chars);
 }
