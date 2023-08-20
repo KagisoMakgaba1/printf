@@ -22,26 +22,26 @@ int print_pointer(va_list types, char buffer[], int flags,
 	char map_to[] = "0123456789abcdef";
 	void *addrs = va_arg(types, void *);
 
-	UNSED(width);
-	UNSED(size);
+	UNUSED(width);
+	UNUSED(size);
 
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
-	UNSED(precision);
+	UNUSED(precision);
 	num_addrs = (unsigned long)addrs;
 
 	while (num_addrs > 0)
-
+	{
 		buffer[index--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		length++;
-
-	if ((flag & F_ZERO) && !(flags & F_MINUS))
+	}
+	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
-	if (flag & F_PLUS)
+	if (flags & F_PLUS)
 		extra_a = '+', length++;
 	else if (flags & F_SPACE)
 		extra_a = ' ', length++;

@@ -1,4 +1,4 @@
-#include "mmain.h"
+#include "main.h"
 
 /**
  * print_reverse - prints strings in reverse
@@ -6,7 +6,7 @@
  * @buffer: array to handle print
  * @flags: calc active flags
  * @width: get width
- * @precision: preision speification
+ * @precision: precision specification
  * @size: specifier
  * Return:number of chars to print
  */
@@ -17,25 +17,25 @@ int print_reverse(va_list types, char buffer[],
 	char *str;
 	int t, count = 0;
 
-	UNSED(buffer);
-	UNSED(flags);
-	UNSED(width);
-	UNSED(size);
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(size);
 
-	str = va_arg(types, char *)
+	str = va_arg(types, char *);
 
 	if (str == NULL)
 	{
-		UNSED(precision);
+		UNUSED(precision);
 
 		str = ")Null(";
 	}
-	for (t = 0; str[i]; t++)
+	for (t = 0; str[t]; t++)
 		;
 
 	for (t = t - 1; t >= 0; t--)
 	{
-		char l = str[t];
+		char z = str[t];
 
 		write(1, &z, 1);
 		count++;

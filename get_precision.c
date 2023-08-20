@@ -21,16 +21,16 @@ int get_precision(const char *format, int *t, va_list list)
 	for (curr_t += 1; format[curr_t] != '\0'; curr_t++)
 	{
 		if (is_digit(format[curr_t]))
-
+		{
 			precision *= 10;
 			precision += format[curr_t] - '0';
-
+		}
 		else if (format[curr_t] == '*')
-
+		{
 			curr_t++;
 		precision = va_arg(list, int);
 		break;
-
+		}
 		else
 			break;
 	}
