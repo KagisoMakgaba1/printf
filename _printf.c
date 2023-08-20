@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 	}
 
 	print_buff(buff, &buff_index);
-	va_end (li);
+	va_end(li);
 
 	return (printed_chars);
 }
