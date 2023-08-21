@@ -10,7 +10,6 @@
  * @size: Size specifier
  * Return: Numbers of char printed
  */
-
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -27,7 +26,6 @@ int print_rot13string(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-
 	if (str == NULL)
 		str = "(AHYY)";
 	for (t = 0; str[t]; t++)
@@ -37,7 +35,10 @@ int print_rot13string(va_list types, char buffer[],
 			if (in[l] == str[l])
 			{
 				a = out[l];
-				write(1, &a, 1);
+				if (write(1, &a, 1) != 1)
+				{
+					return (-1);
+				}
 				count++;
 				break;
 			}
@@ -45,10 +46,11 @@ int print_rot13string(va_list types, char buffer[],
 		if (!in[l])
 		{
 			a = str[t];
-			write(1, &a, 1);
+			if (write(1, &a, 1) != 1)
+				return (-1);
+
 			count++;
 		}
 	}
 	return (count);
 }
-
