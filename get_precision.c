@@ -27,12 +27,12 @@ int get_precision(const char *format, int *t, va_list list)
 		}
 		else
 		{
-			while (isdigit(format[curr_t]))
-
+			while (is_digit(format[curr_t]))
+			{
 				precision = precision * 10 + (format[curr_t] - '0');
 				curr_t++;
+			}
 		}
-	}
 
 	*t = curr_t - 1;
 
