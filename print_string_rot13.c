@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * print_rot13string - Prints strings in rot13.
- * @types: List of arguments
- * @buffer: Array to handle print
- * @flags: Active flags
- * @width: Get width
+ * print_rot13string - Print a string in rot13.
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
- * Return: Numbers of char printed
+ * Return: Numbers of chars printed
  */
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	char a;
+	char x;
 	char *str;
-	unsigned int t, l;
+	unsigned int i, j;
 	int count = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
@@ -28,27 +28,22 @@ int print_rot13string(va_list types, char buffer[],
 	UNUSED(size);
 	if (str == NULL)
 		str = "(AHYY)";
-	for (t = 0; str[t]; t++)
+	for (i = 0; str[i]; i++)
 	{
-		for (l = 0; in[l]; l++)
+		for (j = 0; in[j]; j++)
 		{
-			if (in[l] == str[l])
+			if (in[j] == str[i])
 			{
-				a = out[l];
-				if (write(1, &a, 1) != 1)
-				{
-					return (-1);
-				}
+				x = out[j];
+				write(1, &x, 1);
 				count++;
 				break;
 			}
 		}
-		if (!in[l])
+		if (!in[j])
 		{
-			a = str[t];
-			if (write(1, &a, 1) != 1)
-				return (-1);
-
+			x = str[i];
+			write(1, &x, 1);
 			count++;
 		}
 	}
